@@ -1,0 +1,13 @@
+t = -10:0.01:10;
+g2 = heaviside(t + 2) - heaviside(t - 2);
+g4 = heaviside(t + 4) - heaviside(t - 4);
+f = g2 + g4;
+plot(t,f);
+hold on;
+g2 = heaviside(2 * t + 2) - heaviside(2 * t - 2);
+g4 = heaviside(2 * t + 4) - heaviside(2 * t - 4);
+f1 = g2 + g4;
+plot(t,f1,'r');
+axis([-11 11 -1 3]);
+xlabel("蓝色为f(t),红色为f(2t)");
+title('f(t)与f(2t)');
