@@ -1,0 +1,13 @@
+syms t;
+f1 = exp(-2 * t) * heaviside(t) / 2;
+F1 = fourier(f1);
+f2 = exp(-2 * (t - 1)) * heaviside(t - 1) / 2;
+F2 = fourier(f2);
+subplot(2,1,1);
+fplot(abs(F1));
+hold on;
+fplot(abs(F2));
+subplot(2,1,2);
+fplot(angle(F1));
+hold on;
+fplot(angle(F2));
